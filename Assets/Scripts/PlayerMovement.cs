@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 10f;
     private float lookSpeed = 2f;
     private float lookXLimit = 45f;
+    private float lookYLimit = 45f;
     private float defaultHeight = 2f;
     private float crouchHeight = 1f;
     private float crouchSpeed = 3f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
+    private float rotationY = 0;
     private CharacterController characterController;
 
     private bool canMove = true;
@@ -142,8 +144,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            //playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+
+            rotationY += -Input.GetAxis("Mouse X") * lookSpeed;
+            rotationY = Mathf.Clamp(rotationY, -lookYLimit, lookYLimit);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse Y") * lookSpeed, 0);
         }
 
     }
