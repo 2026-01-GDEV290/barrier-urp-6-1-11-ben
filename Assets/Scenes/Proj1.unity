@@ -10675,52 +10675,52 @@ PrefabInstance:
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.105
+      value: 0.1050269
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.144
+      value: 0.14402041
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.052
+      value: 0.052031092
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6077106
+      value: 0.021683449
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38046622
+      value: 0.6758609
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.41642925
+      value: -0.73638004
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5590348
+      value: 0.022053845
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 831.871
+      value: 896.45703
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 167.481
+      value: 0.12199402
       objectReference: {fileID: 0}
     - target: {fileID: 5673037619427867375, guid: 0e7eb41d1f8212845bbfff670bd49101,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 256.739
+      value: 94.911
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19874,13 +19874,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9970832, z: -0, w: 0.0763227}
-  m_LocalPosition: {x: 1.28376, y: 2.6362193, z: 7.57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.04727778, z: -0, w: -0.9988818}
+  m_LocalPosition: {x: 0.037, y: 1.714, z: -0.113}
+  m_LocalScale: {x: 0.602396, y: 0.60239595, z: 0.602396}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -171.246, z: 0}
+  m_Father: {fileID: 2047698830}
+  m_LocalEulerAnglesHint: {x: 0, y: -365.42, z: 0}
 --- !u!43 &971267229
 Mesh:
   m_ObjectHideFlags: 0
@@ -25018,7 +25018,6 @@ MonoBehaviour:
   jumpPower: 7
   gravity: 10
   animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
 --- !u!143 &1175043744
 CharacterController:
   m_ObjectHideFlags: 0
@@ -31698,6 +31697,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1841c298173cdad4db8df8602c8f1c8d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 961739753}
     - targetCorrespondingSourceObject: {fileID: -229113793236118474, guid: 1841c298173cdad4db8df8602c8f1c8d,
         type: 3}
       insertIndex: 0
@@ -41422,6 +41425,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1547272882}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2047698830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1841c298173cdad4db8df8602c8f1c8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1547272882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2047698831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41439,7 +41448,6 @@ MonoBehaviour:
   jumpPower: 7
   gravity: 10
   animator: {fileID: 2047698829}
-  spriteRenderer: {fileID: 0}
 --- !u!143 &2047698832
 CharacterController:
   m_ObjectHideFlags: 0
@@ -43115,7 +43123,6 @@ SceneRoots:
   - {fileID: 376311866}
   - {fileID: 148182023}
   - {fileID: 1547272882}
-  - {fileID: 961739753}
   - {fileID: 922398825}
   - {fileID: 18277440}
   - {fileID: 668860431}
