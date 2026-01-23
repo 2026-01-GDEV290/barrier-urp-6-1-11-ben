@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
 
     //Animator and SpriteRenderer Variables
-    /*[SerializeField] private Animator animator;
+    [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    private float xPosLastFrame;*/
+    //private float xPosLastFrame;
 
 
 
@@ -64,19 +64,19 @@ public class PlayerMovement : MonoBehaviour
         //You may have to adjust this conditional to reflect whatever you're using to check movement,
         //but it essentially just checks if you're moving. If you are, the running animation is played.
         //If you're standing still, the idle sprite will be invoked. 
-        /*if (moveDirection != Vector3.zero)
+        if (moveDirection != Vector3.zero)
         {
             animator.SetBool("isRunning", true);
         }
         else
         {
             animator.SetBool("isRunning", false);
-        }*/
+        }
 
 
         //You don't really need this conditional/if-else, you just need to check that if the player attacks, then the attack
         //animation will play. The lines inside the if-else is the main importance. 
-        /*if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
             animator.SetBool("isAttacking", true);
         }
@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
-
+        /*
         //Tbh I don't really know what this does exactly, but this makes it so that the sprites flip based on the direction 
         //of the player's movement
         if (transform.position.x > xPosLastFrame)
