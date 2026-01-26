@@ -4,7 +4,13 @@ using UnityEngine;
 public class BarrierHealth : MonoBehaviour
 {
     [SerializeField] private float health;
-    public bool isDestroyed = false;
+    public bool isDestroyed;
+
+    private void Start()
+    {
+        isDestroyed = false;
+
+    }
 
     public void TakeDamage(float damage)
     {
@@ -14,6 +20,7 @@ public class BarrierHealth : MonoBehaviour
         if(health <= 0)
         {
             isDestroyed = true;
+            Debug.Log("Is Wall Destoyed: "+ isDestroyed);
             Destroy(gameObject);
             
         }

@@ -6,7 +6,9 @@ public class ScreenShake : MonoBehaviour
     public AnimationCurve curve;
     public bool start = false;
 
-    public BarrierHealth barrierStatus;
+    //BarrierHealth barrierStatus;
+
+    [SerializeField] BarrierHealth barrierStatus;
 
     void Update()
     {
@@ -22,15 +24,19 @@ public class ScreenShake : MonoBehaviour
 
         }*/
 
-        GameObject barrier = GameObject.Find("SlashableScreen");
-        if (barrier != null)
+        //GameObject barrier = GameObject.Find("SlashableScreen");
+        //barrierStatus = barrier.GetComponent<BarrierHealth>();
+        if (barrierStatus != null)
         {
-            barrierStatus = barrier.GetComponent<BarrierHealth>();
             if (barrierStatus.isDestroyed)
             {
                 StartCoroutine(Shaking());
 
             }
+        }
+        else
+        {
+            Debug.Log("The BarrierStatus is Null.");
         }
 
 

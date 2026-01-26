@@ -19828,15 +19828,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.005279541
       value: 0
-      inSlope: 0.12441883
-      outSlope: 0.12441883
+      inSlope: 0.076120734
+      outSlope: 0.076120734
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.24687305
-      value: 0.030058783
+      time: 0.433839
+      value: 0.03262226
       inSlope: -0.07472231
       outSlope: -0.07472231
       tangentMode: 0
@@ -19846,8 +19846,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.03991197
-      outSlope: -0.03991197
+      inSlope: -0.057620108
+      outSlope: -0.057620108
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -43549,7 +43549,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.23, y: 0.44, z: 0.07644764}
+  m_Size: {x: 0.38, y: 0.57, z: 0.07644764}
   m_Center: {x: -0.000000014560015, y: 1.4, z: -0.00000019136283}
 --- !u!82 &8725009858503929505
 AudioSource:
