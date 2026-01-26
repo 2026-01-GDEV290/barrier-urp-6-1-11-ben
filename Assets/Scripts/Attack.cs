@@ -6,10 +6,13 @@ public class Attack : MonoBehaviour
     private Animator anim;
     [SerializeField] private Collider weaponCollider;
 
+    AudioSource swordSlash;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
+        swordSlash = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -18,6 +21,7 @@ public class Attack : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger(name: "Attack");
+            swordSlash.Play();
         }
     }
 
