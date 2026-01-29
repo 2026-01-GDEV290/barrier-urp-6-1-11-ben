@@ -17,10 +17,10 @@ public class DealDamage : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            BarrierHealth enemy = other.GetComponent<BarrierHealth>();
-            enemy.TakeDamage(damage);
             tvSlash.Play();
             wireCut.Play();
+            BarrierHealth enemy = other.GetComponent<BarrierHealth>();
+            enemy.TakeDamage(damage);
         }
     }
 }

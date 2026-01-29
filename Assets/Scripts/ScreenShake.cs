@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 public class ScreenShake : MonoBehaviour
 {
-    public float duration = 1.0f;
+    public float duration = 0.5f;
     public AnimationCurve curve;
     public bool start = false;
 
@@ -12,11 +12,11 @@ public class ScreenShake : MonoBehaviour
 
     void Update()
     {
-        /*if(start)
+        if(start)
         {
             start = false;
             StartCoroutine(Shaking());
-        }*/
+        }
 
         /*if (barrierStatus.isDestroyed)
         {
@@ -24,22 +24,27 @@ public class ScreenShake : MonoBehaviour
 
         }*/
 
-        //GameObject barrier = GameObject.Find("SlashableScreen");
-        //barrierStatus = barrier.GetComponent<BarrierHealth>();
+        /*GameObject barrier = GameObject.Find("SlashableScreen");
+        barrierStatus = barrier.GetComponent<BarrierHealth>();
         if (barrierStatus != null)
         {
             if (barrierStatus.isDestroyed)
             {
-                StartCoroutine(Shaking());
+                BeginShaking();
 
             }
         }
         else
         {
             Debug.Log("The BarrierStatus is Null.");
-        }
+        }*/
 
 
+    }
+
+    public void BeginShaking()
+    {
+        StartCoroutine(Shaking());
     }
 
     public IEnumerator Shaking()
