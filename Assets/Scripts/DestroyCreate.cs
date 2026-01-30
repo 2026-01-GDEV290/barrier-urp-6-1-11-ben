@@ -7,6 +7,9 @@ public class DestroyCreate : MonoBehaviour
     public GameObject tennaDamaged_1;
     public GameObject tennaDamaged_2;
     private Quaternion targetRotation;
+    private GameObject instance1;
+    private GameObject instance2;
+    private GameObject instance3;
 
     void Start()
     {
@@ -25,7 +28,11 @@ public class DestroyCreate : MonoBehaviour
 
         Destroy(tennaNormal);
 
-        Instantiate(tennaDamaged_1, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
+        //Creates slightly damaged tenna
+        
+        instance1 = Instantiate(tennaDamaged_1, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
+        //instance1.transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
+
 
     }
 
@@ -33,9 +40,11 @@ public class DestroyCreate : MonoBehaviour
     {
         //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
-        Destroy(tennaDamaged_1);
+        Destroy(instance1);
 
-        Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
+        instance2 = Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
+        //Creates more damaged tenna
+        //Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
     }
 
     public void DestroyMoreDamagedTenna()
@@ -44,6 +53,5 @@ public class DestroyCreate : MonoBehaviour
 
         Destroy(tennaDamaged_2);
 
-        //Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
     }
 }

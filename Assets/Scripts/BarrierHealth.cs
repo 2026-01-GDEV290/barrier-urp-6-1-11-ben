@@ -6,12 +6,6 @@ public class BarrierHealth : MonoBehaviour
     [SerializeField] private float health;
     public bool isDestroyed;
 
-    /*public GameObject tennaNormal;
-    public GameObject tennaDamaged_1;
-    public GameObject tennaDamaged_2;
-
-    public bool tennaNormal_isDestroyed = false;*/
-
     public ScreenShake shakeScreen;
 
     public DestroyCreate destroyAndCreate;
@@ -20,23 +14,11 @@ public class BarrierHealth : MonoBehaviour
     {
         isDestroyed = false;
 
-        /*if (shakeScreen != null)
-        {
-            Debug.Log("Shake has occurred!");
-        }
-        else
-        {
-            Debug.Log("Shake didn't work.");
-        }*/
-
-        
-
     }
 
     public void TakeDamage(float damage)
     {
 
-        //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
         health -= damage;
 
@@ -44,11 +26,7 @@ public class BarrierHealth : MonoBehaviour
         if (health == 2)
         {
             destroyAndCreate.DestroyTennaNormal();
-            //Destroy(tennaNormal);
 
-            //tennaNormal_isDestroyed=true;
-
-            //Instantiate(tennaDamaged_1, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
 
             Debug.Log("Current Health " + health);
             Debug.Log("Now showing Tenna with first damage");
@@ -56,11 +34,12 @@ public class BarrierHealth : MonoBehaviour
         
         if(health == 1)
         {
-            //Destroy(tennaDamaged_1);
-
-            //Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
+            GameObject tennaTwo = GameObject.Find("Tenna_Updater");
+            destroyAndCreate = tennaTwo.GetComponent<DestroyCreate>();
+            //destroyAndCreate = GameObject.Find("Tenna_Updater");
 
             destroyAndCreate.DestroyDamagedTenna();
+            //destroyAndCreate.CreateWorstTenna();
 
             Debug.Log("Hits left " + health);
             Debug.Log("Now showing Tenna with more damage");
@@ -81,5 +60,14 @@ public class BarrierHealth : MonoBehaviour
         }*/
     }
 
-   
+    /*if (shakeScreen != null)
+        {
+            Debug.Log("Shake has occurred!");
+        }
+        else
+        {
+            Debug.Log("Shake didn't work.");
+        }*/
+
+
 }
