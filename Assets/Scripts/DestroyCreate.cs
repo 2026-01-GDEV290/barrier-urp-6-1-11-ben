@@ -6,10 +6,11 @@ public class DestroyCreate : MonoBehaviour
     public GameObject tennaNormal;
     public GameObject tennaDamaged_1;
     public GameObject tennaDamaged_2;
+    private Quaternion targetRotation;
 
     void Start()
     {
-        
+        targetRotation = Quaternion.Euler(0f, 180f, 0f);
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class DestroyCreate : MonoBehaviour
 
     public void DestroyTennaNormal()
     {
-        Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
+        
 
         Destroy(tennaNormal);
 
@@ -30,7 +31,7 @@ public class DestroyCreate : MonoBehaviour
 
     public void DestroyDamagedTenna()
     {
-        Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
+        //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
         Destroy(tennaDamaged_1);
 
@@ -39,7 +40,7 @@ public class DestroyCreate : MonoBehaviour
 
     public void DestroyMoreDamagedTenna()
     {
-        Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
+        //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
         Destroy(tennaDamaged_2);
 
