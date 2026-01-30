@@ -6,7 +6,15 @@ public class DestroyCreate : MonoBehaviour
     public GameObject tennaNormal;
     public GameObject tennaDamaged_1;
     public GameObject tennaDamaged_2;
+    public GameObject fracturedTenna;
+
+    public ScreenShake shakeScreen;
+
     private Quaternion targetRotation;
+
+    private float breakForce = 20f;
+
+
     private GameObject instance1;
     private GameObject instance2;
     private GameObject instance3;
@@ -16,11 +24,6 @@ public class DestroyCreate : MonoBehaviour
         targetRotation = Quaternion.Euler(0f, 180f, 0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void DestroyTennaNormal()
     {
@@ -51,7 +54,17 @@ public class DestroyCreate : MonoBehaviour
     {
         //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
-        Destroy(tennaDamaged_2);
+        shakeScreen.BeginShaking();
 
+        Destroy(instance2);
+
+        instance3 = Instantiate(fracturedTenna, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
+
+        foreach(Rigidbody rb in instance3.GetComponentsInChildren<Rigidbody>())
+        {
+            //Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
+            //Vector3 force = 
+            rb.AddForce(transform.forward * breakForce, ForceMode.Impulse);
+        }
     }
 }

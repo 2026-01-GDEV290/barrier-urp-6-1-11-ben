@@ -6,7 +6,7 @@ public class BarrierHealth : MonoBehaviour
     [SerializeField] private float health;
     public bool isDestroyed;
 
-    public ScreenShake shakeScreen;
+    //public ScreenShake shakeScreen;
 
     public DestroyCreate destroyAndCreate;
 
@@ -36,13 +36,21 @@ public class BarrierHealth : MonoBehaviour
         {
             GameObject tennaTwo = GameObject.Find("Tenna_Updater");
             destroyAndCreate = tennaTwo.GetComponent<DestroyCreate>();
-            //destroyAndCreate = GameObject.Find("Tenna_Updater");
+
 
             destroyAndCreate.DestroyDamagedTenna();
-            //destroyAndCreate.CreateWorstTenna();
 
             Debug.Log("Hits left " + health);
             Debug.Log("Now showing Tenna with more damage");
+        }
+
+        if(health <= 0)
+        {
+            GameObject tennaThree = GameObject.Find("Tenna_Updater");
+            destroyAndCreate = tennaThree.GetComponent<DestroyCreate>();
+
+            destroyAndCreate.DestroyMoreDamagedTenna();
+
         }
 
         //Debug.Log(health);
