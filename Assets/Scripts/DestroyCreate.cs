@@ -19,6 +19,8 @@ public class DestroyCreate : MonoBehaviour
     private GameObject instance2;
     private GameObject instance3;
 
+    public AudioSource glassShatter1;
+
     void Start()
     {
         targetRotation = Quaternion.Euler(0f, 180f, 0f);
@@ -51,6 +53,7 @@ public class DestroyCreate : MonoBehaviour
 
     public void DestroyMoreDamagedTenna()
     {
+        glassShatter1.Play();
 
         shakeScreen.BeginShaking();
 

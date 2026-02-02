@@ -4,8 +4,10 @@ public class DealDamage : MonoBehaviour
 {
     [SerializeField] private float damage;
 
-    public AudioSource tvSlash;
-    public AudioSource wireCut;
+    //public AudioSource tvSlash;
+    //public AudioSource wireCut;
+
+    public AudioSource wireSlash;
 
     private void Start()
     {
@@ -17,8 +19,9 @@ public class DealDamage : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            tvSlash.Play();
-            wireCut.Play();
+            //tvSlash.Play();
+            //wireCut.Play();
+            wireSlash.Play();
             BarrierHealth enemy = other.GetComponent<BarrierHealth>();
             enemy.TakeDamage(damage);
         }
