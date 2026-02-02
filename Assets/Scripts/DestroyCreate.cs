@@ -12,7 +12,7 @@ public class DestroyCreate : MonoBehaviour
 
     private Quaternion targetRotation;
 
-    private float breakForce = 20f;
+    private float breakForce = 1400f;
 
 
     private GameObject instance1;
@@ -31,40 +31,41 @@ public class DestroyCreate : MonoBehaviour
 
         Destroy(tennaNormal);
 
-        //Creates slightly damaged tenna
+        tennaDamaged_1.transform.position = new Vector3(32.71f, 5.92f, 20.05f);
         
-        instance1 = Instantiate(tennaDamaged_1, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
-        //instance1.transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
+        //instance1 = Instantiate(tennaDamaged_1, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
+
 
 
     }
 
     public void DestroyDamagedTenna()
     {
-        //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
-        Destroy(instance1);
+        Destroy(tennaDamaged_1);
 
-        instance2 = Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
-        //Creates more damaged tenna
-        //Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation).transform.localScale = new Vector3(171.9393f, 171.9393f, 171.9393f);
+        tennaDamaged_2.transform.position = new Vector3(32.71f, 5.92f, 20.05f);
+
+        //instance2 = Instantiate(tennaDamaged_2, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
     }
 
     public void DestroyMoreDamagedTenna()
     {
-        //Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
 
         shakeScreen.BeginShaking();
 
-        Destroy(instance2);
+        Destroy(tennaDamaged_2);
 
-        instance3 = Instantiate(fracturedTenna, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
+        fracturedTenna.transform.position = new Vector3(32.71f, 5.92f, 20.05f);
 
-        foreach(Rigidbody rb in instance3.GetComponentsInChildren<Rigidbody>())
+        //instance3 = Instantiate(fracturedTenna, new Vector3(32.71f, 5.92f, 20.05f), targetRotation);
+
+        foreach(Rigidbody rb in fracturedTenna.GetComponentsInChildren<Rigidbody>())
         {
             //Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;
             //Vector3 force = 
-            rb.AddForce(transform.forward * breakForce, ForceMode.Impulse);
+            rb.AddForce(transform.forward * breakForce, ForceMode.Acceleration);
+            rb.useGravity = true;
         }
     }
 }

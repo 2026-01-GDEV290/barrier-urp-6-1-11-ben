@@ -25,6 +25,9 @@ public class BarrierHealth : MonoBehaviour
 
         if (health == 2)
         {
+            //GameObject tennaOne = GameObject.Find("Tenna_Updater");
+            //destroyAndCreate = tennaOne.GetComponent<DestroyCreate>();
+
             destroyAndCreate.DestroyTennaNormal();
 
 
@@ -44,7 +47,7 @@ public class BarrierHealth : MonoBehaviour
             Debug.Log("Now showing Tenna with more damage");
         }
 
-        if(health <= 0)
+        if(health == 0)
         {
             GameObject tennaThree = GameObject.Find("Tenna_Updater");
             destroyAndCreate = tennaThree.GetComponent<DestroyCreate>();
